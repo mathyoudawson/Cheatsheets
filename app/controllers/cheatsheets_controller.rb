@@ -17,7 +17,7 @@ class CheatsheetsController < ApplicationController
     if @cheatsheet.save
       redirect_to @cheatsheet
     else
-
+      render 'new'
     end
   end
 
