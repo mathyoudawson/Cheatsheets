@@ -1,5 +1,6 @@
 class CheatsheetsController < ApplicationController
   def index
+    @cheatsheets = Cheatsheet.all
   end
 
   def new
