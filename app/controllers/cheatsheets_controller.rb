@@ -35,8 +35,16 @@ class CheatsheetsController < ApplicationController
     end
   end
 
-  private
-  def cheatsheet_params
+
+  def destroy
+    @cheatsheet = Cheatsheet.find(params[:id])
+    @cheatsheet.destroy
+
+    redirect_to cheatsheets_path
+  end
+
+private
+def cheatsheet_params
     params.require(:cheatsheet).permit(:title, :description)
   end
 end
