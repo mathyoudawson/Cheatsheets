@@ -1,20 +1,6 @@
 <h1>New CheatSheet</h1>
 
-<%= form_with scope: :cheatsheet, url: cheatsheets_path, local: true do |form| %>
-  <p>
-  <%= form.label :title %><br>
-  <%= form.text_field :title %>
-  </p>
-
-  <p>
-  <%= form.label :description %><br>
-  <%= form.text_area :description %>
-  </p>
-
-  <p>
-  <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', cheatsheets_path %>
 
