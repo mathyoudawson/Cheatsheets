@@ -9,6 +9,27 @@
 <%= @cheatsheet.description %>
 </p>
 
+<h2>Cheats</h2>
+<% @cheatsheet.cheats.each do |cheat| %>
+  Term: <%= cheat.term %>
+  Description: <%= cheat.description %>
+<% end %>
+
+<h2>Add a cheat:</h2>
+<%= form_with(model: [ @cheatsheet, @cheatsheet.cheats.build ], local: true) do |form| %>
+  <p>
+  <%= form.label :term %><br>
+  <%= form.text_field :term %>
+  </p>
+  <p>
+  <%= form.label :description %><br>
+  <%= form.text_area :description %>
+  </p>
+  <p>
+  <%= form.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Back', cheatsheets_path %>
 <%= link_to 'Edit', edit_cheatsheet_path %>
 <%= link_to 'Destroy', cheatsheet_path(@cheatsheet),

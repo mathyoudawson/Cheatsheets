@@ -1,5 +1,5 @@
 class Cheatsheet < ApplicationRecord
-  # attr_accessor :title, :description
+  has_many :cheats
 
   validates :title, presence: true
   validates :description, presence: true
