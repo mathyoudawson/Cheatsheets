@@ -11,6 +11,20 @@ class CheatsheetsController < ApplicationController
     @cheatsheet = Cheatsheet.find(params[:id])
   end
 
+  def edit
+    @cheatsheet = Cheatsheet.find(params[:id])
+  end
+
+  def update
+    @cheatsheet = Cheatsheet.find(params[:id])
+
+    if @cheatsheet.update(cheatsheet_params)
+      redirect_to @cheatsheet
+    else
+      render 'edit'
+    end
+  end
+
   def create
     @cheatsheet = Cheatsheet.new(cheatsheet_params)
 
