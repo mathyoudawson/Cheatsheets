@@ -1,4 +1,6 @@
 class CheatsController < ApplicationController
+  http_basic_authenticate_with name: "mattd", password: "temp", only: :destroy
+
   def create
     @cheatsheet = Cheatsheet.find(params[:cheatsheet_id])
     @cheat = @cheatsheet.cheats.create(cheat_params)
@@ -6,10 +8,10 @@ class CheatsController < ApplicationController
   end
 
   def destroy
-        @cheatsheet = Cheatsheet.find(params[:cheatsheet_id])
-            @cheat = @cheatsheet.cheats.find(params[:id])
-                @cheat.destroy
-                    redirect_to cheatsheet_path(@cheatsheet)
+    @cheatsheet = Cheatsheet.find(params[:cheatsheet_id])
+    @cheat = @cheatsheet.cheats.find(params[:id])
+    @cheat.destroy
+    redirect_to cheatsheet_path(@cheatsheet)
   end
 
   private
