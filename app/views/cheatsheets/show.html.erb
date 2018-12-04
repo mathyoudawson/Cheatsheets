@@ -10,6 +10,7 @@
 </p>
 
 <h2>Cheats</h2>
+<%= render @cheatsheet.cheats %>
 <% @cheatsheet.cheats.each do |cheat| %>
   Term: <%= cheat.term %>
   Description: <%= cheat.description %>

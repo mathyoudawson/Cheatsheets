@@ -1,0 +1,15 @@
+<p>
+<strong>Cheat:</strong>
+<%= cheat.term %>
+</p>
+
+<p>
+<strong>Description:</strong>
+<%= cheat.description %>
+</p>
+
+<p>
+<%= link_to 'Destroy Cheat', [cheat.cheatsheet, cheat],
+method: :delete,
+data: { confirm: 'Are you sure?' } %>
+</p>
