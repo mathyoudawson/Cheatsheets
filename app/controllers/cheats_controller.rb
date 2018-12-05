@@ -16,6 +16,6 @@ class CheatsController < ApplicationController
 
   private
   def cheat_params
-    params.require(:cheat).permit(:term, :description)
+    params.require(:cheat).permit(:category, :term, :description)
   end
 end

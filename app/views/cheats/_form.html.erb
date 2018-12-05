@@ -1,4 +1,8 @@
 <%= form_with(model: [ @cheatsheet, @cheatsheet.cheats.build ], local: true) do |form| %>
+<p>
+  <%= form.label :category %><br>
+  <%= form.text_field :category %>
+  </p>
   <p>
   <%= form.label :term %><br>
   <%= form.text_field :term %>
