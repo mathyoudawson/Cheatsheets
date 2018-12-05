@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_093559) do
+ActiveRecord::Schema.define(version: 2018_12_05_052115) do
 
   create_table "cheats", force: :cascade do |t|
     t.string "term"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_093559) do
     t.integer "cheatsheet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.index ["cheatsheet_id"], name: "index_cheats_on_cheatsheet_id"
   end
 
