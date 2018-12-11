@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :cheats
   end
 
-  resource :scrapper_api
+  resource :scraper_api
 
   root 'cheatsheets#index'
 end
