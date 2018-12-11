@@ -10,7 +10,6 @@ class ScraperApisController < ActionController::Base
   def create
     @cheatsheet = ScraperService.new(request.raw_post).process_json
     respond_to do |format|
-      # format.json { render json: { "message": "Successful POST payload: #{request.raw_post}" } }
       if @cheatsheet.save
         format.json { render json: { "message": "Cheatsheet sucessfully created" } }
       else
