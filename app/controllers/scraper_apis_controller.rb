@@ -8,7 +8,7 @@ class ScraperApisController < ActionController::Base
   end
 
   def create
-    @cheatsheet = ScraperService.new(request.raw_post).process_json
+    @cheatsheet = DeserializerService.new(request.raw_post).process_json
     respond_to do |format|
       if @cheatsheet.save
         format.json { render json: { "message": "Cheatsheet sucessfully created" } }

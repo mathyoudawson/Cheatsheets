@@ -1,4 +1,4 @@
-class ScraperService
+class DeserializerService
   def initialize(request)
     @json_data = JSON.parse(request)
     @cheatsheet = Cheatsheet.new(:title => "Vim", :description => "Imported cheatsheet")
