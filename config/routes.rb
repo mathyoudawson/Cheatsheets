@@ -7,5 +7,11 @@ Rails.application.routes.draw do
 
   resource :scraper_api
 
+  namespace :api do
+    namespace :v1 do
+      resource :cheatsheet_api
+    end
+  end
+
   root 'cheatsheets#index'
 end
