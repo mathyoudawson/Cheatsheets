@@ -10,7 +10,7 @@ module Api
       end
 
       def create
-        @cheatsheet = DeserializerService.new(request.raw_post).process_json
+        @cheatsheet = Api::V1::DeserializerService.new(request.raw_post).process_json
         respond_to do |format|
           if @cheatsheet.save
             format.json { render json: { "message": "Cheatsheet sucessfully created" } }
