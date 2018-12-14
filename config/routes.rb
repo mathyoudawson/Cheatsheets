@@ -5,8 +5,6 @@ Rails.application.routes.draw do
     resources :cheats
   end
 
-  resource :scraper_api
-
   namespace :api do
     namespace :v1 do
       resource :cheatsheet_api
