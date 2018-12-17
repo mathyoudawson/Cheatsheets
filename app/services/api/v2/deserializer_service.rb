@@ -16,7 +16,11 @@ module Api
       end
 
       def validate_json!(json)
-        JSON::Validator.validate!(CHEATSHEET_SCHEMA, json)
+        begin
+          JSON::Validator.validate!(CHEATSHEET_SCHEMA, json)
+        rescue JSON::Schema::ValidationError => e
+          e.message
+        end
       end
 
       def process_metadata(metadata)
