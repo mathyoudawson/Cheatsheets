@@ -33,7 +33,8 @@ RSpec.describe 'deserializer_service' do
   }
 
   it 'has valid data' do
-    true
+     processed_json = deserialized_json.process_json 
+     expect(processed_json.valid?).to be true
   end
 
   it 'processes the title metadata' do
@@ -59,5 +60,12 @@ RSpec.describe 'deserializer_service' do
   it 'returns a cheatsheet' do
     processed_json = deserialized_json.process_json 
     expect(processed_json.class).to eq(Cheatsheet)
+  end
+
+  it 'creates a cheatsheet with two cheats' do
+     processed_json = deserialized_json.process_json 
+     processed_json.save
+     expect(processed_json.cheats.count).to eq 2
+     processed_json.destroy
   end
 end
