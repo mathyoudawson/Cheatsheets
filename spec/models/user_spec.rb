@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
     let(:user) {
-      User.new(:name => 'Testee', :email => 'test@user.com')
+      User.new(:name => 'Testee', :email => 'test@user.com',
+              password: "foobar", password_confirmation: "foobar")
     }
 
   it 'should be valid' do
@@ -29,5 +30,15 @@ RSpec.describe User, type: :model do
     duplicate_user = user.dup
     user.save
     expect(duplicate_user.valid?).to be false
+  end
+
+  it 'should have a present (nonblank) password' do
+    user.password = user.password_confirmation = " " * 5
+    expect(user.valid?).to be false
+  end
+
+  it 'has a minimum length for password' do
+    user.password = user.password_confirmation = "a" * 5
+    expect(user.valid?).to be false
   end
 end
