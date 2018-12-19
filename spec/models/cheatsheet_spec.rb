@@ -3,13 +3,12 @@ require 'rails_helper'
 RSpec.describe Cheatsheet, type: :model do
   it 'can create a valid cheatsheet' do
     @cheatsheet = Cheatsheet.new(:title => 'Example', :description => 'An example cheatsheet')
-
-    expect(@cheatsheet.valid?).to be true
+    expect(@cheatsheet).to be_valid
   end
 
-it 'cannot create an invalid cheatsheet' do
+  it 'cheatsheet not to be valid' do
     @cheatsheet = Cheatsheet.new(:title => '', :description => '')
 
-    expect(@cheatsheet.valid?).to be false
+    expect(@cheatsheet).to_not be_valid
   end
 end

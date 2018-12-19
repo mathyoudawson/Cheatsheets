@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'should have a present (nonblank) password' do
-    user.password = user.password_confirmation = " " * 5
+    user.password = user.password_confirmation = " " * 7
     expect(user.valid?).to be false
   end
 
