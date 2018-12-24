@@ -2,7 +2,7 @@ class CheatsheetsController < ApplicationController
   http_basic_authenticate_with name: "mattd", password: "temp", except: [:index, :show]
 
   def index
-    @cheatsheets = Cheatsheet.all
+    @cheatsheets = Cheatsheet.paginate(page: params[:page])
   end
 
   def new

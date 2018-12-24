@@ -37,6 +37,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'json-schema'
+gem 'will_paginate',           '3.1.6'
 
 group :production do
     gem 'pg'
