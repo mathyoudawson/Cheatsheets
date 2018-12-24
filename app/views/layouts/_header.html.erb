@@ -2,6 +2,7 @@
 <% if logged_in? %>
   <%= link_to 'Users', '#' %>
   <%= link_to 'Profile', current_user %>
+  <%= link_to "Settings", edit_user_path(current_user) %>
   <%= link_to 'Settings', '#' %>
   <%= link_to 'Log Out', logout_path, method: :delete %>
 <% else %>
