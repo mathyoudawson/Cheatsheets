@@ -1,0 +1,8 @@
+<li>
+  <p><%= link_to user.name, user %></p>
+  <p>Cheatsheets: <%= user.cheatsheets.count %></p>
+  <% if current_user &. admin? && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete,
+      data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
