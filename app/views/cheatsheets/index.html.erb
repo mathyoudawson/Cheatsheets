@@ -1,15 +1,8 @@
-<h1>Cheatsheets#index</h1>
-<p>Find me in app/views/cheatsheets/index.html.erb</p>
-
+<h1>All Cheatsheets</h1>
 <%= link_to 'New', new_cheatsheet_path %>
 
-<% @cheatsheets.each do |cheatsheet| %>
-  <p> Title: <%= cheatsheet.title %> </p>
-  <p> Description: <%= cheatsheet.description %> </p>
-  <%= link_to 'Show', cheatsheet_path(cheatsheet) %>
-  <%= link_to 'Edit', edit_cheatsheet_path(cheatsheet) %>
-  <%= link_to 'Destroy', cheatsheet_path(cheatsheet),
-    method: :delete,
-    data: { confirm: 'Are you sure?' } %>
-<% end %>
+<%= will_paginate %>
 
+<%= render @cheatsheets %>
+
+<%= will_paginate %>
