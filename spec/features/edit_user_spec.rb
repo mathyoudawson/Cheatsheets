@@ -1,10 +1,7 @@
 require 'rails_helper'
 
 describe "editing a user", type: :feature do
-  let!(:user) { User.create(name: 'test',
-                        email: 'jack@daniels.com',
-                        password: 'foobar',
-                        password_confirmation: 'foobar') }
+  let!(:user) { create(:user) } 
 
   it 'edits my details' do
     page.set_rack_session(user_id: user.id)
