@@ -59,7 +59,6 @@ describe "cheatsheets", type: :feature do
       click_button 'Create Cheat'
 
       expect(page).to have_content 'Category: Example'
-
     end
   end
 end
