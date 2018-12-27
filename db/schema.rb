@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_26_210228) do
+ActiveRecord::Schema.define(version: 2018_12_27_091401) do
 
   create_table "cheats", force: :cascade do |t|
     t.string "term"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2018_12_26_210228) do
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
 end
