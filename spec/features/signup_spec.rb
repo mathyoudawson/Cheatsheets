@@ -31,8 +31,7 @@ describe "the signin process", type: :feature do
     visit edit_account_activation_path(user.activation_token, email: user.email)
 
     expect(page).to have_content 'Account activated!'
-    # I need to requery my user as otherwise it does not return the updated attributes
-    expect(User.find_by(email: user.email).activated).to be true
+    expect(user.reload.activated).to be true
   end
 
   it "doesn't sign me in with invalid credentials" do
