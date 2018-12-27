@@ -12,6 +12,16 @@ describe 'users', type: :feature do
 
       expect(page).to have_content 'All users'
     end
+    
+    it 'views all users' do
+      page.set_rack_session(user_id: user.id)
+      inactive_user = create(:user, activated: false, activated_at: nil)
+
+      visit "/users/#{inactive_user.id}"
+
+      # Testing that you are redirected to url
+      expect(page).to have_content 'All Cheatsheets'
+    end
 
     it 'as an admin' do
       create(:user)
