@@ -8,7 +8,7 @@ describe "the signin process", type: :feature do
     fill_in 'user_password', with: 'password'
     fill_in 'user_password_confirmation', with: 'password'
     click_button 'Create my account'
-    expect(page).to have_content 'Sucessfully created user'
+    expect(page).to have_content 'Please check your email to activate your account'
   end
 
   it "doesn't sign me in with invalid credentials" do
