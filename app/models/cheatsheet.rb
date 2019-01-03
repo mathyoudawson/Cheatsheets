@@ -4,4 +4,11 @@ class Cheatsheet < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
+
+  def self.clone_from(parent_id)
+    parent = Cheatsheet.find(parent_id)
+    cloned_cheatsheet = parent.dup
+    cloned_cheatsheet.user = nil
+    cloned_cheatsheet
+  end
 end

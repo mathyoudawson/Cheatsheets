@@ -43,8 +43,20 @@ class CheatsheetsController < ApplicationController
     redirect_to cheatsheets_path
   end
 
-private
-def cheatsheet_params
+  def clone
+    @cheatsheet = Cheatsheet.clone_from(params[:cheatsheet_id])
+    @cheatsheet.user = current_user
+    if @cheatsheet.save
+      redirect_to @cheatsheet
+      flash[:success] = "Successfully cloned cheatsheet"
+    else
+      redirect_to cheatsheets_path
+      flash[:danger] = "Could not clone cheatsheet"
+    end
+  end
+
+  private
+  def cheatsheet_params
     params.require(:cheatsheet).permit(:title, :description)
   end
 end
