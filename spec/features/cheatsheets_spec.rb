@@ -16,7 +16,9 @@ describe "cheatsheets", type: :feature do
       expect(page).to have_content 'Cheats'
     end
     it 'editing a cheatsheet' do
-      create(:cheatsheet)
+      cheatsheet = create(:cheatsheet)
+      cheatsheet.user = user
+      cheatsheet.save
       page.set_rack_session(user_id: user.id)
 
       visit '/cheatsheets'
@@ -45,12 +47,14 @@ describe "cheatsheets", type: :feature do
       expect(page).to have_content 'Capybara Cheatsheet'
     end
     it 'creates a cheatsheet with cheats' do
-      create(:cheatsheet)
+      cheatsheet = create(:cheatsheet)
+      cheatsheet.user = user
+      cheatsheet.save
       page.set_rack_session(user_id: user.id)
 
-      visit '/cheatsheets'
+      visit "/users/#{user.id}"
 
-      expect(page).to have_content 'All Cheatsheets'
+      expect(page).to have_content "#{user.name}'s Cheatsheets"
 
       click_link 'Show'
       fill_in 'cheat_category', with: 'Example'

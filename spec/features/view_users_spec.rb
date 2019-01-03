@@ -20,7 +20,7 @@ describe 'users', type: :feature do
       visit "/users/#{inactive_user.id}"
 
       # Testing that you are redirected to url
-      expect(page).to have_content 'All Cheatsheets'
+      expect(page).to have_content 'Home'
     end
 
     it 'as an admin' do
