@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/pages/:page" => "pages#show"
   get 'password_resets/new'
   get 'password_resets/edit'
   root 'cheatsheets#index'
