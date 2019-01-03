@@ -14,8 +14,8 @@
 <%= cheat.description %>
 </p>
 
-<p>
-<%= link_to 'Destroy Cheat', [cheat.cheatsheet, cheat],
-method: :delete,
-data: { confirm: 'Are you sure?' } %>
-</p>
+<% if current_user?(@cheatsheet.user) %>
+  <%= link_to 'Destroy Cheat', [cheat.cheatsheet, cheat],
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+<% end %>
