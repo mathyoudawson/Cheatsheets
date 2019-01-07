@@ -1,0 +1,48 @@
+/* * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'header';
+
+.navigation-link {
+  a, a:visited {
+    color: white;
+    text-decoration: none
+  }
+}
+
+.pill_link {
+   border: 2px solid white;
+   border-radius: 1em;;
+   font-size: 1.5em;
+   padding: 0.3em;
+}
+
+$primary-blue: #1F3672;
+$primary-white: white;
+$primary-font: 'rubik', 'helvetica', 'sans-serif';
+
+html {
+  background-color: $primary-blue;
+  font-family: $primary-font;
+  color: $primary-white;
+  margin-right: 2em;
+  margin-left: 2em;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
