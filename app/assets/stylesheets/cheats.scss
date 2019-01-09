@@ -1,3 +1,50 @@
 // Place all the styles related to the Cheats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'base_card';
+
+#show-cheatsheet {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+#cheat-grid {
+  display: grid;
+  grid-template-columns: [start] 1fr [middle] 1fr [end];
+  grid-column-gap: 0.5em;
+  margin-bottom: 2em;
+}
+
+.cheat-term {
+  display:grid;
+  grid-template-columns: 1fr 3fr;
+  p {
+    padding: 0.3em;
+    font-size: 1.25em;
+  }
+}
+
+.cheat-action {
+  padding-right: 0.5em;
+}
+
+.cheat-title {
+  background-color: $card-highlight-1;
+  border-radius: 1em 0em 0em 1em;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cheat-description {
+  background-color: $card-highlight-2;
+  border-radius: 0em 1em 1em 0em;
+}
