@@ -1,8 +1,10 @@
-<li>
-  <%= link_to user.name, user %>
-  | Cheatsheets: <%= user.cheatsheets.count %>
+<div class='user-name'>
+  <h2><%= link_to user.name, user %></h2>
+</div>
+<div class='user-count navigation-link'>
+  <h2><%= user.cheatsheets.count %></h2>
   <% if current_user &. admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-      data: { confirm: "You sure?" } %>
+    <%= link_to "delete", user, method: :delete,
+      data: { confirm: "You sure?"}, class: 'small-pill-link' %>
   <% end %>
-</li>
+</div>

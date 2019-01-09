@@ -1,3 +1,34 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'base_card';
+
+#users {
+  margin-right: 2em;
+  margin-left: 2em;
+}
+
+#user-grid {
+  display: grid;
+  grid-template-columns: [start] 2fr [middle] 1fr [end];
+  margin-bottom: 2em;
+  grid-row-gap: 1em;
+}
+
+.user-name {
+  border-radius: 1em 0em 0em 1em;
+  background-color: $card-highlight-1;
+  padding: 0.5em;
+  a, a:visited {
+    color: white;
+  }
+}
+
+.user-count {
+  border-radius: 0em 1em 1em 0em;
+  background-color: $card-highlight-2;
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
