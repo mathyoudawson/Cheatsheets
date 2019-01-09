@@ -10,7 +10,7 @@ describe 'users', type: :feature do
 
       visit '/users'
 
-      expect(page).to have_content 'All users'
+      expect(page).to have_content 'Explore Users'
     end
     
     it 'views all users' do
@@ -20,7 +20,7 @@ describe 'users', type: :feature do
       visit "/users/#{inactive_user.id}"
 
       # Testing that you are redirected to url
-      expect(page).to have_content 'Home'
+      expect(page).to have_content 'Explore'
     end
 
     it 'as an admin' do
@@ -29,7 +29,7 @@ describe 'users', type: :feature do
 
       visit '/users'
 
-      expect(page).to have_content 'All users'
+      expect(page).to have_content 'Explore User'
       expect(page).to have_content 'delete'
     end
   end

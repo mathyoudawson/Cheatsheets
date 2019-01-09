@@ -9,7 +9,7 @@ describe "cheatsheets", type: :feature do
 
       visit '/cheatsheets'
 
-      expect(page).to have_content 'All Cheatsheets'
+      expect(page).to have_content 'Explore Cheatsheets'
 
       click_link 'Show'
 
@@ -39,7 +39,7 @@ describe "cheatsheets", type: :feature do
 
       visit '/cheatsheets'
 
-      click_link 'New'
+      click_link 'new-cheatsheet'
       fill_in 'cheatsheet_title', with: 'Capybara Cheatsheet'
       fill_in 'cheatsheet_description', with: 'A new cheatsheet'
       click_button 'Create Cheatsheet'
@@ -62,7 +62,7 @@ describe "cheatsheets", type: :feature do
       fill_in 'cheat_description', with: 'Does a thing'
       click_button 'Create Cheat'
 
-      expect(page).to have_content 'Category: Example'
+      expect(page).to have_content 'click button'
     end
   end
 end
