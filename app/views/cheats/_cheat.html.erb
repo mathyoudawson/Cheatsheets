@@ -1,6 +1,6 @@
 <div class='cheat'>
   <div class='category'>
-    <% unless cheat.id != 1 && Cheat.find(cheat.id-1).category == cheat.category %>
+    <% unless cheat.id != 1 && Cheat.exists?(cheat.id-1) && Cheat.find(cheat.id-1).category == cheat.category %>
     <h3>
     <%= cheat.category %>
     </h3>
