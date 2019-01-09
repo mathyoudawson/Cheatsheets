@@ -7,26 +7,34 @@
   }
 }
 
+.link {
+  a, a:visited {
+    color: white;
+  }
+}
+
 .pill-link {
-   border: 2px solid white;
+  font-weight: bold;
+   border: 0.2em solid white;
    border-radius: 1em;;
-   font-size: 1.5em;
+   font-size: 1.25em;
    padding: 0.3em;
 }
 
 .small-pill-link {
-   border: 2px solid white;
+   border: 0.2em solid white;
    border-radius: 1em;;
    font-size: 1em;
    padding: 0.3em;
 }
 
 .large-pill-link {
-   border: 2px solid white;
+  font-weight: bold;
+   border: 0.2em solid white;
    border-radius: 1em;;
-   font-size: 3em;
-   padding: 0.3em;
-   padding-right: 1em;
-   padding-left: 1em;
+   font-size: 2.25em;
+   padding: 0.2em;
+   padding-right: 2.5em;
+   padding-left: 2.5em;
    margin: 0.5em;
 }

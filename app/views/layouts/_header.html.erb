@@ -1,11 +1,17 @@
-<h1><strong><%= link_to 'Cheatsheets', root_path %></strong></h1>
-  <%= link_to 'Cheatsheets', cheatsheets_path %> | 
-<% if logged_in? %>
-  <%= link_to 'Users', users_path %>
-  <%= link_to 'Profile', current_user %>
-  <%= link_to "Settings", edit_user_path(current_user) %>
-  <%= link_to 'Log Out', logout_path, method: :delete %>
-<% else %>
-  <%= link_to 'Log In', login_path %>
-  <%= link_to 'Sign Up', signup_path %>
-<% end %>
+<div id='header' class='navigation-link'>
+  <div id='logo'>
+    <%= link_to image_tag("logo.png"), root_path %>
+  </div>
+  <div id='nav'>
+    <%= link_to 'Cheatsheets', cheatsheets_path, {:class => 'pill-link'} %>
+    <% if logged_in? %>
+      <%= link_to 'Users', users_path, {:class => 'pill-link'}  %>
+      <%= link_to 'Profile', current_user, {:class => 'pill-link'}  %>
+      <%= link_to "Settings", edit_user_path(current_user), {:class => 'pill-link'}  %>
+      <%= link_to 'Log Out', logout_path, { method: :delete, class: 'pill-link' } %>
+    <% else %>
+      <%= link_to 'Log In', login_path, {:class => 'pill-link'}  %>
+      <%= link_to 'Sign Up', signup_path, {:class => 'pill-link'}  %>
+    <% end %>
+  </div>
+</div>

@@ -1,7 +1,24 @@
 
-#hero-navigation {
+#hero-navigation, #hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+#hero {
+  background-image: url('hero_image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 3fr 7fr 3fr;
+}
+
+#hero-items {
+  grid-area: 2 / 2 / 3 / 3;
+}

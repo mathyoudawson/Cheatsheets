@@ -1,8 +1,15 @@
-<h1>All Cheatsheets</h1>
-<%= link_to 'New', new_cheatsheet_path %>
-
-<%= will_paginate %>
-
-<%= render @cheatsheets %>
-
-<%= will_paginate %>
+<div id='cheatsheets'>
+  <div id='cheatsheet-header'>
+    <div><h1>Explore Cheatsheets</h1></div>
+    <div>
+      <%= link_to image_tag("add_button.png"), new_cheatsheet_path %>
+    </div>
+  </div>
+  <div id='cheatsheet-grid'>
+    <div class='title'><h1>Title</h1></div>
+    <div class='description'><h1>Description</h1></div>
+    <div class ='actions'><h1>Actions</h1></div>
+    <%= render @cheatsheets %>
+  </div>
+  <%= will_paginate %>
+    </div>

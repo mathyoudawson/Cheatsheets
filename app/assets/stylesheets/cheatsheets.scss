@@ -1,3 +1,67 @@
 // Place all the styles related to the Cheatsheets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$card-highlight-1: #374A7A;
+$card-highlight-2: #475884;
+
+#cheatsheets {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+#cheatsheet-header {
+  display:flex;
+  justify-content: space-between;
+}
+
+#cheatsheet-grid {
+  display: grid;
+  align-items: stretch;
+  grid-template-rows: repeat(30, auto);
+  grid-template-columns:[title] 1fr [description] 2fr [actions] 1fr [end]; 
+  grid-row-gap: 1em;
+}
+
+.title {
+  grid-column: title / description;
+  grid-row: 1 / 2;
+}
+
+.description {
+  grid-column: description / actions;
+  grid-row: 1 / 2;
+}
+
+.actions {
+  grid-column: actions / end;
+  grid-row: 1 / 2;
+}
+
+.card {
+  padding: 1em;
+}
+
+.cheatsheet-title {
+  background-color: $card-highlight-1;
+  border-radius: 1em 0em 0em 1em;
+}
+
+.cheatsheet-description {
+  background-color: $card-highlight-2;
+}
+
+.cheatsheet-action {
+  background-color: $card-highlight-1;
+  border-radius: 0em 1em 1em 0em;
+}
+
+.action-links {
+  // display: flex;
+  // Some difficulty aligning this div in the center with flex box
+  // using a grid somewhat helped this but vertically stacked the buttons
+  // Need to try wrapping links in their own divs. Lower priority
+  display: grid;
+  align-self: center;
+  justify-content: flex-end;
+}

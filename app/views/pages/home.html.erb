@@ -1,8 +1,11 @@
-<h1>Cheatsheets Home</h1>
-<button>
-  <%= link_to 'Create', new_cheatsheet_path %>
-</button>
-
-<button>
-  <%= link_to 'Explore', cheatsheets_path %>
-</button>
+<div id='hero' class='hero'>
+  <div id='hero-items'>
+    <div id='hero-image'>
+      <img src='hero_logo.png'/>
+    </div>
+    <div id='hero-navigation' class='navigation-link'>
+      <%= link_to 'Create', new_cheatsheet_path, { :class => 'large-pill-link' } %>
+      <%= link_to 'Explore', cheatsheets_path, { :class => 'large-pill-link' } %>
+    </div>
+  </div>
+</div>
