@@ -1,5 +1,5 @@
 User.create!(name:  "Example User",
-             email: "example@railstutorial.org",
+             email: "example@test.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
@@ -19,6 +19,14 @@ User.create!(name:  "Example User",
 
   title = Faker::ProgrammingLanguage.name
   description = Faker::Fallout.quote
-  user.cheatsheets.create(title: title,
+  cheatsheet = user.cheatsheets.create(title: title,
                          description: description)
+  5.times do
+    category = Faker::Science.element
+    20.times do
+      cheatsheet.cheats.create(category: category,
+                              term: Faker::Science.element_symbol,
+                              description: Faker::Science.scientist)
+    end 
+  end
 end
