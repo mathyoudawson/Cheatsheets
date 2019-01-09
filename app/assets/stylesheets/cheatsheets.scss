@@ -15,10 +15,9 @@
   justify-content: space-between;
 }
 
-#cheatsheet-grid {
+.cheatsheet-grid {
   display: grid;
   align-items: stretch;
-  grid-template-rows: repeat(30, auto);
   grid-template-columns:[title] 1fr [description] 2fr [actions] 1fr [end]; 
   grid-row-gap: 1em;
 }
@@ -57,11 +56,11 @@
 }
 
 .action-links {
-  // display: flex;
+  display: flex;
   // Some difficulty aligning this div in the center with flex box
   // using a grid somewhat helped this but vertically stacked the buttons
   // Need to try wrapping links in their own divs. Lower priority
-  display: grid;
-  align-self: center;
+  // display: grid;
+  align-items: center;
   justify-content: flex-end;
 }
