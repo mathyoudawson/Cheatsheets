@@ -21,6 +21,11 @@ html {
   color: $primary-white;
 }
 
+.margins {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
 #header, #footer {
   margin-left: 2em;
   display: flex;

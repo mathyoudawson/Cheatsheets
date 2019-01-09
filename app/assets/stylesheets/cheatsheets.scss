@@ -4,12 +4,6 @@
 
 @import 'base_card';
 
-
-#cheatsheets {
-  margin-left: 2em;
-  margin-right: 2em;
-}
-
 #cheatsheet-header {
   display:flex;
   justify-content: space-between;
@@ -20,6 +14,7 @@
   align-items: stretch;
   grid-template-columns:[title] 1fr [description] 2fr [actions] 1fr [end]; 
   grid-row-gap: 1em;
+  margin-bottom: 2em;
 }
 
 .title {

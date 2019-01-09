@@ -3,11 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'base_card';
 
-.users {
-  margin-right: 2em;
-  margin-left: 2em;
-}
-
 #user-grid {
   display: grid;
   grid-template-columns: [start] 2fr [middle] 1fr [end];
