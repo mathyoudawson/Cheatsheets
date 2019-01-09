@@ -11,8 +11,10 @@
 #cheat-grid {
   display: grid;
   grid-template-columns: [start] 1fr [middle] 1fr [end];
-  grid-column-gap: 0.5em;
   margin-bottom: 2em;
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0.5em;
+  align-items: flex-end;
 }
 
 .cheat-term {
@@ -47,4 +49,9 @@
 .cheat-description {
   background-color: $card-highlight-2;
   border-radius: 0em 1em 1em 0em;
+}
+
+.category {
+  display: flex;
+  justify-items: center;
 }
