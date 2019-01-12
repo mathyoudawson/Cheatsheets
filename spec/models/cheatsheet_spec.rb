@@ -11,4 +11,8 @@ RSpec.describe Cheatsheet, type: :model do
 
     expect(@cheatsheet).to_not be_valid
   end
+
+  it 'can sort child cheats into categories' do
+    
+  end
 end

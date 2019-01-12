@@ -52,6 +52,6 @@
 }
 
 .category {
-  display: flex;
-  justify-items: center;
+  grid-column-start: start;
+  grid-column-end: end;
 }

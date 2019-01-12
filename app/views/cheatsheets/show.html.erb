@@ -18,7 +18,7 @@
 
   <h1>Cheats</h1>
   <div id='cheat-grid'>
-    <%= render @cheatsheet.cheats %>
+    <%= render 'cheats/sorted_cheats' %>
   </div>
   <%= link_to 'Back', cheatsheets_path, { :class => 'small-pill-link'} %>
 </div>

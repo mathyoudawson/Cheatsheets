@@ -1,13 +1,4 @@
-<% unless cheat.new_record? %>
 <div class='cheat'>
-  <div class='category'>
-    <% unless cheat.id != 1 && Cheat.exists?(cheat.id - 1) && Cheat.find(cheat.id - 1).category == cheat.category %>
-    <h3>
-    <%= cheat.category %>
-    </h3>
-  <% end %>
-  </div>
-
   <div class='cheat-term'>
     <div class='cheat-title'>
       <p>
@@ -28,4 +19,3 @@
     </div>
   </div>
 </div>
-<% end %>
