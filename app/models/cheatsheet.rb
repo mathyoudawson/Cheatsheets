@@ -15,4 +15,12 @@ class Cheatsheet < ApplicationRecord
     cloned_cheatsheet.user = nil
     cloned_cheatsheet
   end
+
+  def self.search(term)
+    if term
+      where('title LIKE ?', "%#{term}%")
+    else
+      all
+    end
+  end
 end

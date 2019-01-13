@@ -1,6 +1,12 @@
 class CheatsheetsController < ApplicationController
   def index
-    @cheatsheets = Cheatsheet.paginate(page: params[:page])
+    @cheatsheets = Cheatsheet.search(params[:search_term]).paginate(page:params[:page])
+
+    # @cheatsheets = if params[:search_term]
+     #                 Cheatsheet.where('title LIKE ?', "%#{params[:search_term]}%").paginate(page:params[:page])
+    # else
+    #   Cheatsheet.paginate(page: params[:page])
+    # end
   end
 
   def new
@@ -58,6 +64,6 @@ class CheatsheetsController < ApplicationController
 
   private
   def cheatsheet_params
-    params.require(:cheatsheet).permit(:title, :description)
+    params.require(:cheatsheet).permit(:title, :description, :search_term)
   end
 end
