@@ -10,7 +10,9 @@ class CheatsheetsController < ApplicationController
   def show
     @cheatsheet = Cheatsheet.find(params[:id])
     if params[:search_term]
-      @cheatsheet.cheats = @cheatsheet.cheats.search(params[:search_term], 'term')
+      search_results = @cheatsheet.cheats.search(params[:search_term], 'term')
+      search_results += @cheatsheet.cheats.search(params[:search_term], 'description')
+      @cheatsheet.cheats = search_results
     end
 
   end
