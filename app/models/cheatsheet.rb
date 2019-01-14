@@ -16,9 +16,9 @@ class Cheatsheet < ApplicationRecord
     cloned_cheatsheet
   end
 
-  def self.search(term)
+  def self.search(term, type)
     if term
-      where('title LIKE ?', "%#{term}%")
+      where("#{type} LIKE ?", "%#{term}%")
     else
       all
     end
