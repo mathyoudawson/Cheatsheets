@@ -5,8 +5,8 @@ class Cheatsheet < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
 
-  def sort_cheats_by_category
-    self.cheats.all.group_by(&:category)
+  def self.sort_cheats_by_category(cheats)
+    cheats.group_by(&:category)
   end
 
   def self.clone_from(parent_id)
@@ -14,6 +14,12 @@ class Cheatsheet < ApplicationRecord
     cloned_cheatsheet = parent.dup
     cloned_cheatsheet.user = nil
     cloned_cheatsheet
+  end
+
+  def search_cheats(term)
+    search_results = self.cheats.search(term, 'term')
+    search_results += self.cheats.search(term, 'description')
+    search_results
   end
 
   def self.search(term, type)

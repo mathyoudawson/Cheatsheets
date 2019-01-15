@@ -1,4 +1,4 @@
-<% @cheatsheet.sort_cheats_by_category.each { |category, cheats| %>
+<% Cheatsheet.sort_cheats_by_category(@cheats).each { |category, cheats| %>
   <div class='category'>
     <h3><%= category %></h3>
   </div>
