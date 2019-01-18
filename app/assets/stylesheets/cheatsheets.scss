@@ -4,9 +4,10 @@
 
 @import 'base_card';
 
-#cheatsheet-header {
+.cheatsheet-header {
   display:flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .cheatsheet-grid {
@@ -58,4 +59,8 @@
   // display: grid;
   align-items: center;
   justify-content: flex-end;
+}
+
+.explore-search {
+  flex-grow: 1;
 }

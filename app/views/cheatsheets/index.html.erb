@@ -1,12 +1,12 @@
 <div class='margins'>
-  <div id='cheatsheet-header'>
+  <div class='cheatsheet-header'>
     <div><h1>Explore Cheatsheets</h1></div>
+    <div class='search explore-search margins'>
+      <%= render 'index_search_form' %>
+    </div>
     <div>
       <%= link_to image_tag("add_button.png"), new_cheatsheet_path, { id: 'new-cheatsheet' } %>
     </div>
-  </div>
-  <div class='search'>
-    <%= render 'index_search_form' %>
   </div>
   <div class='cheatsheet-grid'>
     <div class='title'><h1>Title</h1></div>

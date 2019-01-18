@@ -15,12 +15,12 @@
         data: { confirm: 'Are you sure?' }, :class => 'small-pill-link' %>
     <% end %>
   </div>
-
-  <div class='search'>
-    <%= render 'show_search_form' %>
+  <div class='cheatsheet-header'>
+    <div><h1>Cheats</h1></div>
+    <div class='search margins'>
+      <%= render 'show_search_form' %>
+    </div>
   </div>
-
-  <h1>Cheats</h1>
   <div id='cheat-grid'>
     <%= render 'cheats/sorted_cheats' %>
   </div>

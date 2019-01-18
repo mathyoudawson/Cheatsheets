@@ -1,4 +1,4 @@
-<%= form_tag(cheatsheets_path, method: :get) do %>
+<%= form_tag(cheatsheets_path, method: :get, html: { class: 'margins' }) do %>
   <%= text_field_tag :search_term, params[:search_term] %>
   <%= submit_tag 'Search', name: nil %>
 <% end %>
