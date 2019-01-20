@@ -1,17 +1,30 @@
-<%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages' %>
+<div class='margins'>
+  <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <div class='labels'>
+      <div class='form-field'>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+      <div class='form-field'>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+      <div class='form-field'>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+      <div class='form-field'>
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation %>
+      </div>
 
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.submit yield(:button_text) %>
-<% end %>
+      <div class='form-field submit'>
+        <%= f.submit yield(:button_text) %>
+      </div>
+    </div>
+  <% end %>
+</div>
