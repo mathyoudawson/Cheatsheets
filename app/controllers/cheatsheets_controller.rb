@@ -4,6 +4,10 @@ class CheatsheetsController < ApplicationController
   end
 
   def new
+    unless logged_in?
+      flash[:info] = "Please sign up to create a cheatsheet"
+      redirect_to signup_path
+    end
     @cheatsheet = Cheatsheet.new
   end
 

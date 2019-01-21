@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "cheatsheets", type: :feature do
   let(:user) { create(:user) }
   describe "interacting with", type: :feature do
-    it 'showing a cheatsheet' do
+    it 'shows a cheatsheet' do
       create(:cheatsheet)
       page.set_rack_session(user_id: user.id)
 
@@ -11,11 +11,11 @@ describe "cheatsheets", type: :feature do
 
       expect(page).to have_content 'Explore Cheatsheets'
 
-      click_link 'Show'
+      click_link('Show', :match => :first)
 
       expect(page).to have_content 'Cheats'
     end
-    it 'editing a cheatsheet' do
+    it 'edits a cheatsheet' do
       cheatsheet = create(:cheatsheet)
       cheatsheet.user = user
       cheatsheet.save
