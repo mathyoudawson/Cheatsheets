@@ -9,7 +9,10 @@
   label {
     padding-top: 1em;
   }
-  input[type=email], input[type=password], input[type=text]{
+  textarea {
+    height: 10em;
+  }
+  input[type=email], input[type=password], input[type=text], textarea {
     border: 0.2em solid white;
     border-radius: 1em;
     width: 100%;
