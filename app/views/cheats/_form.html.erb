@@ -1,19 +1,24 @@
-<%= form_with(model: [ @cheatsheet, @cheatsheet.cheats.build ], local: true) do |form| %>
-<p>
-  <%= form.label :category %><br>
-  <%= form.text_field :category %>
-  </p>
-  <p>
-  <%= form.label :term %><br>
-  <%= form.text_field :term %>
-  </p>
-  <p>
-  <%= form.label :description %><br>
-  <%= form.text_area :description %>
-  </p>
-  <p>
-  <%= form.submit %>
-  </p>
-<% end %>
+
+<div class='margins margin-bottom'>
+  <%= form_with(model: [ @cheatsheet, @cheatsheet.cheats.build ], local: true) do |form| %>
+    <div class='labels flex-left'>
+      <div class='form-field'>
+        <%= form.label :category %><br>
+        <%= form.text_field :category %>
+      </div>
+      <div class='form-field'>
+        <%= form.label :term %><br>
+        <%= form.text_field :term %>
+      </div>
+      <div class='form-field'>
+        <%= form.label :description %><br>
+        <%= form.text_area :description %>
+      </div>
+      <div class='form-field'>
+        <%= form.submit %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 

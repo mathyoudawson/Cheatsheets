@@ -2,11 +2,7 @@
 
 .labels {
   font-size: 1.5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  label {
+    label {
     padding-top: 1em;
   }
   textarea {
@@ -56,3 +52,23 @@
     border: 0.2em solid white;
     border-radius: 1em;
 }
+
+.flex-center {
+display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.flex-left {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.margin-bottom {
+  margin-bottom: 1em;
+}
+
