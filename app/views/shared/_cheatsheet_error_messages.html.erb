@@ -1,0 +1,13 @@
+<% if @cheatsheet.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@cheatsheet.errors.count, "error") %> prohibited
+      this cheatsheet from being saved:
+    </h2>
+    <ul>
+      <% @cheatsheet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

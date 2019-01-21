@@ -1,21 +1,7 @@
 <div class='margins'>
   <h1>New CheatSheet</h1>
   <%= form_with(model: @cheatsheet, local: true) do |form| %>
-
-    <% if @cheatsheet.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@cheatsheet.errors.count, "error") %> prohibited
-          this cheatsheet from being saved:
-        </h2>
-        <ul>
-          <% @cheatsheet.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
+    <%= render 'shared/cheatsheet_error_messages' %> 
     <div class='labels'>
       <div class='form-field'>
         <%= form.label :title %><br>
