@@ -27,6 +27,16 @@ html {
   margin-right: 2em;
 }
 
+body {
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+}
+
+#content {
+  flex: 1;
+}
+
 #header, #footer {
   margin-left: 2em;
   display: flex;
@@ -36,9 +46,6 @@ html {
 }
 
 #footer {
-  overflow: hidden;
-  position: relative;
-  bottom: 0;
 }
 
 .message {
