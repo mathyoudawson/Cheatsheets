@@ -13,7 +13,7 @@
 .cheatsheet-grid {
   display: grid;
   align-items: stretch;
-  grid-template-columns:[title] 1fr [description] 2fr [actions] 1fr [end]; 
+  grid-template-columns:[title] 2fr [description] 4fr [actions] 1fr [end]; 
   grid-row-gap: 1em;
   margin-bottom: 2em;
 }
@@ -52,13 +52,12 @@
 }
 
 .action-links {
-  display: flex;
-  // Some difficulty aligning this div in the center with flex box
-  // using a grid somewhat helped this but vertically stacked the buttons
-  // Need to try wrapping links in their own divs. Lower priority
-  // display: grid;
-  align-items: center;
-  justify-content: flex-end;
+  display: grid;
+  align-items: stretch;
+  justify-content: center;
+  a {
+  margin-bottom: 0.5em;
+  }
 }
 
 .explore-search {
