@@ -4,12 +4,12 @@
   <h2>
     <%= @cheatsheet.description %>
   </h2>
-  
-  <%= link_to 'Edit', edit_cheatsheet_path, { :class => 'small-pill-link'} %>
-  <%= link_to 'Destroy', cheatsheet_path(@cheatsheet),
-    method: :delete,
-    data: { confirm: 'Are you sure?' }, :class => 'small-pill-link' %>
-
+  <% if current_user == @cheatsheet.user %> 
+    <%= link_to 'Edit', edit_cheatsheet_path, { :class => 'small-pill-link'} %>
+    <%= link_to 'Destroy', cheatsheet_path(@cheatsheet),
+      method: :delete,
+      data: { confirm: 'Are you sure?' }, :class => 'small-pill-link' %>
+  <% end  %>
 
   <div class='cheatsheet-header'>
     <div><h1>Cheats</h1></div>
