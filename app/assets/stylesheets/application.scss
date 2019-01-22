@@ -14,6 +14,7 @@
  */
 @import 'base';
 @import 'base_navigation';
+@import 'base_card';
 
 html {
   background-color: $primary-blue;
@@ -40,3 +41,21 @@ html {
   bottom: 0;
 }
 
+.message {
+  padding: 1em;
+  border-color: white;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+
+.info-message {
+  background-color: $card-highlight-1;
+}
+
+.danger-message {
+  background-color: #892f1e;
+}
+
+.success-message {
+  background-color: #04461A;
+}
