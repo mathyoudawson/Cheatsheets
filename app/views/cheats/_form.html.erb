@@ -1,7 +1,7 @@
 
 <div class='margins margin-bottom'>
   <%= form_with(model: [ @cheatsheet, @cheatsheet.cheats.build ], local: true) do |form| %>
-    <div class='labels flex-left'>
+    <div class='labels flex-center'>
       <div class='form-field'>
         <%= form.label :category %><br>
         <%= form.text_field :category %>
@@ -20,5 +20,4 @@
     </div>
   <% end %>
 </div>
-
 
