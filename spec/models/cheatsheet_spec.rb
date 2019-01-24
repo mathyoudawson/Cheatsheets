@@ -27,7 +27,14 @@ RSpec.describe Cheatsheet, type: :model do
   it 'can clone a cheatsheet with many cheats' do
     parent_cheatsheet = create(:cheatsheet_with_cheats)
     cloned_cheatsheet = Cheatsheet.clone_from(parent_cheatsheet.id)
+    cloned_cheatsheet.save
 
-    expect(cloned_cheatsheet.cheats).to eq(parent_cheatsheet.cheats)
+    expect(cloned_cheatsheet.cheats.count).to eq(parent_cheatsheet.cheats.count)
+  end
+
+  it 'clones the parent cheats safely' do
+    parent_cheatsheet = create(:cheatsheet_with_cheats)
+
+    expect { Cheatsheet.clone_from(parent_cheatsheet.id).save }.to change { Cheat.count }.by(parent_cheatsheet.cheats.count)
   end
 end
