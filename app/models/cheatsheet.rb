@@ -9,8 +9,7 @@ class Cheatsheet < ApplicationRecord
     cheats.group_by(&:category)
   end
 
-  def self.clone_from(parent_id)
-    parent = Cheatsheet.find(parent_id)
+  def self.clone_from(parent)
     cloned_cheatsheet = parent.dup
     cloned_cheatsheet.cheats = parent.cheats.map(&:dup)
     cloned_cheatsheet.user = nil

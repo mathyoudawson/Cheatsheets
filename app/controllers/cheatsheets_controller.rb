@@ -55,7 +55,8 @@ class CheatsheetsController < ApplicationController
   end
 
   def clone
-    @cheatsheet = Cheatsheet.clone_from(params[:cheatsheet_id])
+    parent_cheatsheet = Cheatsheet.find(params[:cheatsheet_id])
+    @cheatsheet = Cheatsheet.clone_from(parent_cheatsheet)
     @cheatsheet.user = current_user
     if @cheatsheet.save
       redirect_to @cheatsheet
