@@ -13,7 +13,28 @@ RSpec.describe Cheatsheet, type: :model do
   end
 
   it 'can sort child cheats into categories' do
-    
+   cheatsheet = create(:cheatsheet_with_cheats) 
+   sorted_cheats = Cheatsheet.sort_cheats_by_category(cheatsheet.cheats)
+
+   expect(sorted_cheats).to be_instance_of(Hash)
+   expect(sorted_cheats.size).to eq(5)
+  end
+
+  it 'can sort cheats into a hash of categories and cheats' do
+    cheatsheet = create(:cheatsheet_with_cheats) 
+    sorted_cheats = Cheatsheet.sort_cheats_by_category(cheatsheet.cheats)
+
+
+    expect(sorted_cheats.first[0]).to be_instance_of(String)
+    expect(sorted_cheats.first[1]).to be_instance_of(Array)
+    expect(sorted_cheats.first[1][0]).to be_instance_of(Cheat)
+  end
+
+  it 'can access sorted cheats' do
+    cheatsheet = create(:cheatsheet_with_cheats) 
+    sorted_cheats = Cheatsheet.sort_cheats_by_category(cheatsheet.cheats)
+
+    expect(sorted_cheats.first[0]).to eq(sorted_cheats.first[1][0].category)
   end
 
   it 'can clone a cheatsheet' do
