@@ -58,4 +58,10 @@ RSpec.describe Cheatsheet, type: :model do
 
     expect { Cheatsheet.clone_from(parent_cheatsheet).save }.to change { Cheat.count }.by(parent_cheatsheet.cheats.count)
   end
+
+  it 'searches for a cheatsheet title' do
+    cheatsheet = create(:cheatsheet)
+
+    expect(Cheatsheet.search('Test Cheatsheet', 'title').first).to be_instance_of(Cheatsheet)
+  end
 end
