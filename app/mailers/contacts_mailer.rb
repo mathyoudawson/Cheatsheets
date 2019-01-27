@@ -5,6 +5,6 @@ class ContactsMailer < ApplicationMailer
 
   def general_message(contact)
     @contact = contact
-    mail :to => "mattdawson@outlook.com", :subject => "You Have a Message From Cheatsheets"
+    mail :to => "matthewdawson@outlook.com", :subject => "You Have a Message From Cheatsheets"
   end
 end
