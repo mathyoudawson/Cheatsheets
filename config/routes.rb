@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'contacts/new'
-  get 'contacts/create'
   get "/pages/:page" => "pages#show"
   get 'password_resets/new'
   get 'password_resets/edit'
@@ -25,4 +23,6 @@ Rails.application.routes.draw do
       resource :cheatsheet_api
     end
   end
+
+  resources :contacts, only: [:new, :create]
 end
